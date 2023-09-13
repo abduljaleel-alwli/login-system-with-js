@@ -1,0 +1,34 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.auth-hero{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: #0133;
+    color: black;
+}
+.forms{
+    width: 40%;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 0 10px 0 #0133;
+}
+.forms {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.updatePassword,
+.goToLogin,
+#button-updatePassword{
+    display: inline-block !important;
+}
+.updatePassword:hover{
+    cursor: pointer;
+}
