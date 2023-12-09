@@ -1,7 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Almarai:wght@400;800&family=Tajawal:wght@200;400;700&display=swap');
+:root{
+    --color: #000;
+    --bg-body: #e8eaed;
+    --color-border: #ddd;
+    --color-primary: #3284fd;
+    --shadow-head-footer: 0 -2px 7px #212020;
+}
 *{
-    margin: 0;
     padding: 0;
+    margin: 0;
     box-sizing: border-box;
+}
+body{
+    background: var(--bg-body);
+    background: #ececec;
+    font-family: 'Tajawal', sans-serif !important;
+    height: 150vh;
+    color: #000;
+}
+a{
+    text-decoration: none;
 }
 .auth-hero{
     display: flex;
@@ -31,4 +49,215 @@
 }
 .updatePassword:hover{
     cursor: pointer;
+}
+
+.forms::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.forms {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.signUp-message,
+.login-message,
+.update-password-message{
+    background: none;
+    border-top: 0;
+    border-bottom: 0;
+    border-right: 0;
+    border-radius: 0;
+    margin-bottom: 10px;
+    overflow: hidden;
+    border-left: 1px solid #6da5ff;
+}
+/*=========== Start Message style ===========*/
+.message p{
+    margin: 0;
+    color: #6da5ff !important;
+    font-size: 19px;
+}
+.message-animation p{
+    animation: message 1.4s ease-in-out;
+}
+@keyframes message {
+    from{
+        opacity: 0;
+        margin-left: -150px;
+    }
+    to{
+        opacity: 1;
+        margin-left: 0px;
+    }
+}
+
+.show-message{
+    display: block !important;
+}
+.myname{
+    background: #3cb2e2 !important;
+}
+
+/*=========== Start Icons ===========*/
+.icons{
+    width: 50%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+/*=========== Start profile ===========*/
+.search-and-profile{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+    float: right;
+}
+.profile-button{
+    width: 49px;
+    height: 48px;
+    margin-left: 15px;
+    margin-right: 15px;
+    background: var(--bg-components);
+    border-radius: 30px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.profile-navbar{
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 440px;
+    right: -440px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    backdrop-filter: blur(29px) hue-rotate(70deg);
+    backdrop-filter: blur(29px) hue-rotate(27deg);
+    background: rgb(255 255 255 / 0%);
+    transition: .6s;
+    z-index: 99999999999999;
+}
+.opened-profile-navbar{
+    right: 0px;
+}
+.closed-profile-navbar{
+    right: -440px;
+}
+.profile-navbar form{
+    display: grid;
+    overflow: auto;
+}
+.profile-navbar input{
+    margin: 10px 0;
+    background: var(--bg-components);
+}
+.profile-navbar input:focus{
+    background: var(--bg-components);
+}
+.profile-button{
+    background-size: cover !important;
+}
+.profile-photo-body{
+    width: 97px;
+    height: 94px;
+    border-radius: 227px;
+    margin: auto;
+    background: var(--bg-components);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover !important;
+}
+.profile-photo-input{
+    opacity: 0;
+    height: 98px;
+    text-align: center;
+    border-radius: 108px;
+    cursor: pointer;
+}
+.profile-name{
+    margin: 10px 0;
+    margin-bottom: 23px;
+    text-align: center;
+}
+.save-photo{
+    width: 65px;
+    margin: auto;
+    margin-top: 15px;
+    display: none;
+}
+.profile-message{
+    border-radius: 0;
+    text-align: center;
+    border-left: 1px solid #6da5ff;
+}
+.close-button{
+    position: absolute;
+    top: 16px;
+    left: 25px;
+}
+.burger-menu{
+    font-size: 23px;
+    transform: scale(1.7);
+    margin-right: 13px;
+    margin-top: 4px;
+    margin-bottom: -5px;
+}
+
+@keyframes close-animation {
+    0%{
+        right: 0;
+    }
+    10%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+        right: -440px;
+        display: none;
+    }
+}
+@keyframes open-animation {
+    0%{
+        display: flex !important;
+    }
+    100%{
+        opacity: 1 !important;
+        display: flex !important;
+        right: 300px !important;
+    }
+}
+
+@media screen and (max-width: 960px) {
+    .forms {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .search-and-profile .navbar{
+        display: none;
+    }
+    .search-and-profile{
+        width: 10%;
+        justify-content: flex-end;
+    }
+    .icons{
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .opened-profile-navbar{
+        width: 100%;
+    }
 }

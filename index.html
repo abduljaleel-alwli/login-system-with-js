@@ -3,76 +3,134 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <!--- REMIX ICONS --->
+	<link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
     <title>Login System</title>
 </head>
 <body>
-    <div class="auth-hero" id="auth-hero">
+<!--===================== Auth =====================-->
+    <div class="auth-hero" id="auth-hero" >
         <div class="forms container p-3 m-3">
 
-            <!-- <form class="signin-and-login-form" id="signin-and-login-form">
-                <div class="message" id="message"></div>
-                <input type="text" name="username" id="username" placeholder="Enter UserName">
-                <input type="text" name="email" id="email" placeholder="Enter Email">
-                <input type="password" name="password" id="password" placeholder="Enter Password">
-                <button type="submit" id="button-signIn">Sign Up</button>
-                <button type="submit" id="button-login">Login</button>
-                <div class="updatePassword" id="updatePassword">
-                    <h4>Frong Password</h4>
+            <form class="container" id="signUp-form">
+                <div class="alert message message-animation signUp-message" id="body-signUp-message" role="alert">
+                    <p id="signUp-message">
+                        إنشاء حساب
+                    </p>
                 </div>
-            </form> -->
+                <div class="mb-3">
+                    <label class="form-label" id="username-name">اسم المستخدم</label>
+                    <input type="text" name="username" class="form-control" id="signUp-username" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">عنوان البريد الإلكتروني</label>
+                    <input type="email" name="email" class="form-control" id="signUp-email" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">كلمة المرور</label>
+                    <input type="password" name="password" class="form-control" id="signUp-password" required>
+                </div>
+                <button type="submit" class="btn btn-dark" id="signUp-button" style="display: inline-block">تسجيل</button>
+            </form>
 
-            <!-- <form class="update-password-form" id="update-password-form">
-                <div class="newMessage" id="newMessage"></div>
-                <input type="text" name="newEmail" id="newEmail" placeholder="Enter Your Email">
-                <input type="password" name="newPassword" id="newPassword" placeholder="Enter Your New Password">
-                <button type="submit" id="button-updatePassword">Update Password</button>
-                <div class="goToLogin" id="goToLogin">
-                    <h4>Go To Login</h4>
-                </div>
-            </form> -->
-
-            <form class="signin-and-login-form container" id="signin-and-login-form">
-                <div class="message" id="message"></div>
-                <div class="mb-3">
-                    <label class="form-label" id="username-name">UserName</label>
-                    <input type="text" name="username" class="form-control" id="username">
+            
+            <form class="container" id="login-form">
+                <div class="alert message message-animation login-message" id="body-login-message" role="alert">
+                    <p id="login-message">
+                        تسجيل الدخول
+                    </p>
                 </div>
                 <div class="mb-3">
-                    <label class="form-label">Email address</label>
-                    <input type="text" name="email" class="form-control" id="email">
+                    <label class="form-label">عنوان البريد الإلكتروني</label>
+                    <input type="email" name="email" class="form-control" id="login-email" required>
                 </div>
                 <div class="mb-3">
-                    <label class="form-label">Password</label>
-                    <input type="password" name="password" class="form-control" id="password">
+                    <label class="form-label">كلمة المرور</label>
+                    <input type="password" name="password" class="form-control" id="login-password" required>
                 </div>
-                <button type="submit" class="btn btn-primary" id="button-signIn" style="display: inline-block">Sign Up</button>
-                <button type="submit" class="btn btn-primary" id="button-login" style="display: inline-block">Login</button>
-                <div class="updatePassword" id="updatePassword">
-                    <button class="btn btn-primary">Forgotting Password</button>
+                <button type="submit" class="btn btn-dark" id="login-button" style="display: inline-block">تسجيل الدخول</button>
+                <div class="updatePassword" id="update-password">
+                    <button class="btn btn-dark">نسيت كلمة المرور</button>
                 </div>
             </form>
 
-            <form class="update-password-form container" id="update-password-form">
-                <div class="newMessage" id="newMessage"></div>
-                <div class="mb-3">
-                    <label class="form-label">Email address</label>
-                    <input type="text" name="newEmail" id="newEmail" class="form-control">
+            <form class="update-password-form container" id="update-password-form" style="display: none;">
+                <div class="alert message message-animation update-password-message" id="body-update-password-message" role="alert">
+                    <p id="update-password-message">
+                        تغيير كلمة المرور
+                    </p>
                 </div>
                 <div class="mb-3">
-                    <label class="form-label">New Password</label>
-                    <input type="password" name="newPassword" id="newPassword" class="form-control" >
+                    <label class="form-label">عنوان البريد الإلكتروني</label>
+                    <input type="email" name="newEmail" id="newEmail" class="form-control" required>
                 </div>
-                <button type="submit" class="btn btn-primary" id="button-updatePassword" style="display: inline-block">Update Password</button>
+                <div class="mb-3">
+                    <label class="form-label">كلمة المرور الجديدة</label>
+                    <input type="password" name="newPassword" id="newPassword" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">إعد كتابة كلمة المرور</label>
+                    <input type="password" name="confirmPassword" id="confirmPassword" class="form-control" required>
+                </div>
+                <button type="submit" class="btn btn-dark" id="button-update-password" style="display: inline-block">تعديل كلمة المرور</button>
                 <div class="goToLogin" id="goToLogin">
-                    <button class="btn btn-primary" style="display: inline-block">Go To Login</button>
+                    <button class="btn btn-dark" style="display: inline-block">انتقل إلى تسجيل الدخول</button>
                 </div>
             </form>
 
         </div>
     </div>
-    <script src="script.js"></script>
+<!--===================== Auth =====================-->
+
+<!--===================== Start Header =====================-->
+    <div class="search-and-profile">
+        <div class="profile">
+            <div class="profile-button" id="show-profile">
+                <i class="ri-user-line change-theme" id="user-icon"></i>
+            </div>
+        </div>
+    </div>
+<!--===================== End Header =====================-->
+
+<!--===================== Start Profile =====================-->
+	<div class="profile-navbar" id="profile-navbar">
+		<form class="container" id="profile-form">
+			<div class="alert message message-animation profile-message" id="body-profile-message" role="alert">
+				<p id="profile-message">
+					حسابي
+				</p>
+			</div>
+			<div class="close-button" id="close-button">
+				<i class="ri-close-line change-theme"></i>
+			</div>
+			<div class="profile-photo-body" id="profile-photo">
+				<i class="ri-user-line change-theme" id="user-icon" style="position: absolute;"></i>
+				<img src="" alt="" class="profile-photo" id="profile-photo">
+				<input type="file" class="profile-photo-input" id="profile-photo-input">
+			</div>
+			<button class="save-photo btn btn-dark" id="save-photo" style="display: none;">حفظ</button>
+			<p class="profile-name" id="profile-name" style="text-align: center;"></p>
+			<div class="mb-3">
+				<label class="form-label" id="username-name">اسم المستخدم</label>
+				<input type="text" name="username" class="form-control" id="profile-username">
+			</div>
+			<div class="mb-3">
+				<label class="form-label">عنوان البريد الإلكتروني</label>
+				<input type="email" name="email" class="form-control" id="profile-email" required>
+			</div>
+			<div class="mb-3">
+				<label class="form-label">كلمة المرور</label>
+				<input type="password" name="password" class="form-control" id="profile-password" required>
+			</div>
+			<button type="submit" class="btn btn-dark" id="update-profile" style="display: inline-block">تحديث</button>
+		</form>
+	</div>
+<!--===================== End Profile =====================-->
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="auth.js"></script>
 </body>
 </html>
